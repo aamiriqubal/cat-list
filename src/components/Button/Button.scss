@@ -1,0 +1,57 @@
+@import "../../assets/styles/variables";
+
+.btn {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: 1s ease-in-out;
+
+  &-norm {
+    width: 180px;
+    height: 50px;
+  }
+
+  &-plain {
+    background-color: $color-white;
+    color: black;
+    &:hover {
+      transition: 1s ease-in-out;
+      background: $color-grad-violet-op;
+    }
+  }
+
+  &-default {
+    background: $color-grad-blue;
+    color: $color-white;
+    border: 1px solid $color-grad-violet;
+    &:hover {
+      transition: 1s ease-in-out;
+      background: $color-grad-violet;
+    }
+  }
+
+  &-small {
+    width: 100px;
+    height: 30px;
+  }
+
+  &__text {
+    font-size: 1.5 * $padding-norm;
+    font-weight: 100;
+    text-transform: uppercase;
+  }
+  &:hover svg {
+    stroke-dashoffset: -480;
+  }
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: $color-white;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}

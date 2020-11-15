@@ -1,0 +1,110 @@
+@import "../../assets/styles/variables";
+
+$color-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.1);
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 36px 12px 12px 24px;
+  padding: 5px;
+}
+
+.card {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  border-radius: 4px;
+  align-items: left;
+  margin: $padding-norm;
+  padding: 0 0 15px 0;
+  width: 250px;
+  background: #fff;
+  transition: (all 0.15s);
+  box-shadow: $color-box-shadow;
+  @include for-tablet-landscape-up {
+    width: 300px;
+  }
+  &:hover {
+    transform: scale(1.05);
+    border-radius: 4px;
+  }
+
+  &__add-new {
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    margin: 100px auto;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: $color-box-shadow;
+    .plussign {
+      margin-top: 1.5 * $padding-lg;
+      font-size: 50px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    $size: 100px;
+    width: 100%;
+    display: block;
+    max-width: 300px;
+    height: 350px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    overflow: hidden;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__button-container {
+    display: inline-flex;
+    margin: 12px 6px;
+    .btn {
+      margin-left: 12px;
+    }
+  }
+
+  &__actions {
+    line-height: 12px;
+    padding: 0 8px 0 12px;
+    margin: 0;
+  }
+
+  &__description {
+    span {
+      border-radius: 3px;
+      margin: 1em 1em 0 1em;
+      background-color: $color-grad-violet-op;
+    }
+    &--like {
+      display: inline-block;
+    }
+    &--text {
+      display: block;
+    }
+  }
+}
+
+// Text form
+
+input.input-field {
+  width: 265px;
+  margin-top: 12px;
+  margin-left: 0;
+  max-width: 90%;
+  @include for-tablet-landscape-up {
+    margin-left: 16px;
+    margin-top: 0;
+  }
+}

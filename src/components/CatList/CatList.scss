@@ -1,0 +1,36 @@
+@import "../../assets/styles/variables";
+
+.cat-app-cat-list {
+  overflow-y: auto;
+  height: calc(100vh - 132px);
+  text-align: left;
+
+  &__search-container {
+    padding: $padding-norm $padding-md;
+    display: grid;
+    grid-row-gap: $padding-norm;
+    grid-template-columns: 1fr;
+    text-align: left;
+    input[type="text"],
+    select {
+      margin: 0 $padding-md;
+      width: 50%;
+      max-width: 250px;
+    }
+  }
+
+  &--paragraph {
+    margin: 0 $padding-md;
+  }
+
+  @include for-tablet-landscape-up {
+    text-align: center;
+    &__search-container {
+      padding-top: $padding-norm;
+      grid-template-columns: 1fr 1fr;
+      div:last-child {
+        text-align: right;
+      }
+    }
+  }
+}

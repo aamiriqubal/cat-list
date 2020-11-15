@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+
+$padding-norm: 12px;
+$padding-md: 2 * $padding-norm;
+$padding-lg: 4 * $padding-norm;
+
+$color-white: #ffffff;
+$color-grad-violet: #5c1d90;
+$color-grad-violet-op: rgba(92, 29, 144, 0.1);
+$color-grad-blue: #383691;
+
+$color-black: #010302;
+$color-blue: #1a5276;
+$color-green: #4bca81;
+$color-tan: #f39c12;
+$color-red: #ff6347;
+$color-yellow: #feee1f;
+
+$font-size-norm: 18px;
+
+@mixin color-header-background {
+  background: $color-grad-violet;
+}
+
+@mixin slideFromLeft($fromLeft: auto, $toLeft: auto, $delay: 1.5s) {
+  -webkit-animation: slideFromLeft 0.5s backwards;
+  -webkit-animation-delay: $delay;
+  animation: slideFromLeft 0.5s backwards;
+  animation-delay: $delay;
+
+  @-webkit-keyframes slideFromLeft {
+    from {
+      left: $fromLeft;
+      opacity: 0;
+    }
+    to {
+      left: $toLeft;
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideFromLeft {
+    from {
+      left: $fromLeft;
+      opacity: 0;
+    }
+    to {
+      left: $toLeft;
+      opacity: 1;
+    }
+  }
+}
+
+@mixin slideFromRight($fromRight: auto, $toRight: auto, $delay: 1.5s) {
+  -webkit-animation: slideFromRight 0.5s backwards;
+  -webkit-animation-delay: $delay;
+  animation: slideFromRight 0.5s backwards;
+  animation-delay: $delay;
+
+  @-webkit-keyframes slideFromRight {
+    from {
+      right: $fromRight;
+      opacity: 0;
+    }
+    to {
+      right: $toRight;
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideFromRight {
+    from {
+      right: $fromRight;
+      opacity: 0;
+    }
+    to {
+      right: $toRight;
+      opacity: 1;
+    }
+  }
+}
+
+// media queries
+@mixin for-phone-only {
+  @media only screen and (max-width: 39.9375em) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-up {
+  @media only screen and (min-width: 39.9375em) {
+    @content;
+  }
+}

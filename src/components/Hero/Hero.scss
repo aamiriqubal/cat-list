@@ -1,0 +1,62 @@
+@import "../../assets/styles/variables";
+
+.cat-app-hero {
+  height: 180vh;
+  position: relative;
+
+  h1 {
+    font-size: 18px;
+  }
+
+  &__container {
+    background-image: url("../../assets/images/hero-image.svg");
+    height: 25%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  &__text {
+    text-align: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 115%;
+    left: 50%;
+    width: 100%;
+    @include slideFromLeft(-20%, 50%);
+  }
+
+  &__button-container {
+    text-align: center;
+    position: absolute;
+    top: 125%;
+    right: 0;
+    left: 0;
+    @include slideFromRight(-20%, 0%, 2.5s);
+  }
+
+  @include for-tablet-landscape-up {
+    &__container {
+      height: 50%;
+      background-position: center;
+    }
+
+    &__text {
+      width: auto;
+      top: 25%;
+      left: 20%;
+      @include slideFromLeft(-20%, 20%);
+    }
+    &__button-container {
+      top: auto;
+      left: auto;
+      bottom: 20%;
+      right: 5%;
+      @include slideFromRight(-20%, 5%, 2.5s);
+    }
+    h1 {
+      font-size: 40px;
+    }
+  }
+}

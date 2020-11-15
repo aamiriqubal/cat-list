@@ -1,0 +1,9 @@
+type Cat @model {
+  id: ID!
+  name: String!
+  weight: String
+  origin: String
+  isEditable: Boolean!
+  description: String!
+  owner: String!
+}

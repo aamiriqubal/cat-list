@@ -1,0 +1,63 @@
+@import "../../assets/styles/variables";
+.cat-app-add-form {
+  background-color: #f2f2f2;
+  &__container {
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  &__loader {
+    margin: 20% auto;
+  }
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="button"] {
+  color: $color-white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  &.submit {
+    background-color: $color-green;
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+  &.reset {
+    margin-left: $padding-md;
+    background-color: #808380;
+    &:hover {
+      background-color: #a0a3a0;
+    }
+  }
+  &.delete {
+    background-color: #f44336;
+    &:hover {
+      background-color: tomato;
+    }
+  }
+}
+
+/* input[type="reset"] {
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #a0a3a0;
+  }
+} */

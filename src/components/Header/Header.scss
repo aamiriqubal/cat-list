@@ -1,0 +1,74 @@
+@import "../../assets/styles/variables";
+
+.cat-app-header {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  margin: 0;
+  padding: $padding-norm $padding-md $padding-lg + $padding-norm;
+  overflow: hidden;
+  color: $color-white;
+  z-index: 1;
+  height: 2px;
+
+  &__icon {
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+  }
+
+  @include for-tablet-landscape-up {
+    height: 40px;
+
+    &__icon {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &__text {
+    &--right {
+      position: absolute;
+      top: 3 * $padding-norm;
+      align-self: flex-end;
+      font-size: $font-size-norm;
+    }
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    content: "";
+    transform-origin: bottom left;
+    @include color-header-background;
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    content: "";
+    transform-origin: bottom right;
+    @include color-header-background;
+  }
+}
+
+/* amplify-sign-out */
+amplify-sign-out {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 12px;
+
+  @include for-tablet-landscape-up {
+    right: 24px;
+    top: 18px;
+  }
+}
