@@ -1,2 +1,1 @@
-declare const awsmobile: {};
-export default awsmobile;
+declare module "@aws-amplify/ui";
