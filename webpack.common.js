@@ -1,15 +1,21 @@
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "development",
-  watch: true,
-  devtool: "inline-cheap-source-map",
-  watchOptions: {
-    ignored: ["node_modules/**"],
+  entry: {
+    app: './src/index.tsx',
   },
-  devServer: {
-    historyApiFallback: true,
-    contentBase: path.resolve(__dirname, './src')
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Aamir Iqubal',
+      template: './src/index.html'
+    }),
+  ],
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   entry: path.resolve(__dirname, './src/index.tsx'),
   performance: {
@@ -50,11 +56,8 @@ module.exports = {
       },
     ]
   },
-  output: {
-    filename: 'bundle.js',
-  },
   resolve: {
     mainFields: ['browser', 'main', 'module'],
     extensions: ['.tsx', '.ts', '.js', '.scss']
   },
-}
+};

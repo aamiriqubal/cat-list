@@ -10,28 +10,31 @@ import '../assets/styles/app.scss';
 /**
  * Babel 7 requires these below imports for async await functions
  */
-import "core-js/stable";
-import "regenerator-runtime/runtime";
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 Amplify.configure(awsconfig);
 
 const App = () => {
   const history = useHistory();
   return (
-    <div className="cat-app">
+    <div className='cat-app'>
       <Header onClickHome={() => history.push('/')} />
       <AmplifySignOut />
       <Switch>
-        <Route exact path='/'
+        <Route
+          exact
+          path='/'
           component={() => (
-            <div className="crud__container">
-              <Hero onClick={() => history.push('/cat-app') } />
-            </div>)}
+            <div className='crud__container'>
+              <Hero onClick={() => history.push('/cat-app')} />
+            </div>
+          )}
         />
         <Route path='/cat-app' component={CatList} />
       </Switch>
     </div>
   );
-}
+};
 
 export default withAuthenticator(App);
