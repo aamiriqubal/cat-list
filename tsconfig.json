@@ -11,6 +11,7 @@
   },
   "include": [
     "src/components",
-    "custom-typings.d.ts"
+    "custom-typings.d.ts",
+    "aws-exports.d.ts"
   ]
 }
