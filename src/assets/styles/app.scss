@@ -29,10 +29,6 @@ body {
 .cat-app {
   &__container {
     min-height: 100%;
-    margin-top: -80px;
-    @include for-tablet-landscape-up {
-      margin-top: -120px;
-    }
     display: block;
   }
 }

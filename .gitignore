@@ -11,7 +11,6 @@ dist/
 .DS_Store
 src/.DS_Store
 node_modules/
-aws-exports.js
 awsconfiguration.json
 amplifyconfiguration.json
 amplify-build-config.json
