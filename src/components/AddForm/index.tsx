@@ -67,6 +67,7 @@ const AddForm: FunctionComponent<AddFormProps> = ({ onAddCat, isLoading }) => {
             <label>Cat Name</label>
             <input
               type='text'
+              data-test='input-cat-name'
               name='catName'
               value={catName}
               placeholder='Cat name..'
@@ -76,6 +77,7 @@ const AddForm: FunctionComponent<AddFormProps> = ({ onAddCat, isLoading }) => {
             <label>Owner</label>
             <input
               type='text'
+              data-test='input-cat-owner'
               name='owner'
               placeholder='Owner name..'
               value={catOwner}
@@ -88,6 +90,7 @@ const AddForm: FunctionComponent<AddFormProps> = ({ onAddCat, isLoading }) => {
                 updateForm({ catDescription: e.currentTarget.value })
               }
               value={catDescription}
+              data-test='input-cat-description'
               name='subject'
               placeholder='Write something..'
               style={{ height: '200px' }}
@@ -95,6 +98,7 @@ const AddForm: FunctionComponent<AddFormProps> = ({ onAddCat, isLoading }) => {
 
             <input
               className='submit'
+              data-test='button-add-cat-submit'
               type='button'
               value='Submit'
               onClick={onSubmit}

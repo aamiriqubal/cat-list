@@ -26,7 +26,7 @@ const App = () => {
           exact
           path='/'
           component={() => (
-            <div className='crud__container'>
+            <div className='cat-app__container'>
               <Hero onClick={() => history.push('/cat-app')} />
             </div>
           )}

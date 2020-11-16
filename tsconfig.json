@@ -5,13 +5,13 @@
     "module": "es6",
     "target": "es5",
     "jsx": "react",
+    "baseUrl": ".",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
   },
   "include": [
     "src/components",
-    "custom-typings.d.ts",
-    "aws-exports.d.ts"
+    "custom-typings.d.ts"
   ]
 }

@@ -142,7 +142,7 @@ const CatList: FunctionComponent = () => {
   return (
     <div className='cat-app-cat-list'>
       {notification.status && <Notification {...notification} />}
-      <h1 className='cat-app-cat-list--header'> Cat list </h1>
+      <h1 className='cat-app-cat-list--header'>Cat list</h1>
       <p className='cat-app-cat-list--paragraph'>
         This application is all about viewing cats database. The fronend is
         built using ReactJs, backend being all handled by the AWS Amplify Auth
@@ -189,13 +189,13 @@ const CatList: FunctionComponent = () => {
               </div>
               <h2 className='card__actions'>{cat.name}</h2>
               <div className='card__description'>
-                {cat && (
-                  <span className='card__description--like'>
-                    Affection Level : {cat.affection_level | 1}
+                {cat && cat.affection_level && (
+                  <span className='card__description--value'>
+                    Affection Level : {cat.affection_level}
                   </span>
                 )}
                 {cat && cat.owner && (
-                  <span className='card__description--like'>
+                  <span className='card__description--value' data-test='cat-owner-name'>
                     Owner : {cat.owner}
                   </span>
                 )}
@@ -206,6 +206,7 @@ const CatList: FunctionComponent = () => {
                   <span>
                     <input
                       className='delete'
+                      data-test='cat-delete-button'
                       type='button'
                       value='Delete'
                       onClick={() => onDeleteCat(cat)}
