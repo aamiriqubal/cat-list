@@ -5,8 +5,8 @@ describe('Testing Cat-List application', () => {
   // Utility to login
   const loginCatList = () => {
     cy.get(selectors.usernameInput).type(username);
-    cy.get(selectors.signInPasswordInput).click({ force: true });
-    cy.wait(1000);
+    cy.get(selectors.signInHeader).click({ force: true });
+    cy.wait(200)
     cy.get(selectors.signInPasswordInput).type(password);
     cy.get(selectors.signInSignInButton).contains('Sign In').click();
   }
