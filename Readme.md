@@ -10,6 +10,8 @@ This project uses ReactJS and AWS Amplify to show the list of cats, you can add 
 
 You need `npm` / `yarn` to run this application. I have `yarn` here.
 
+Before you run this project you would require to ask for the `aws-exports.js` file from the owner of the repository.
+
 ### Setup
 
 ```
