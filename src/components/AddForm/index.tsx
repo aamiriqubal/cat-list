@@ -19,23 +19,20 @@ interface AddFormProps {
 }
 
 const AddForm: FunctionComponent<AddFormProps> = ({ onAddCat, isLoading }) => {
-  const [formState, setFormState] = useState<AddFormState>({
+  const initialState: AddFormState = {
     isEditing: false,
     catName: '',
     catDescription: '',
     catOwner: '',
-  });
+  };
+
+  const [formState, setFormState] = useState<AddFormState>(initialState);
   const { isEditing, catName, catDescription, catOwner } = formState;
   const updateForm = (obj: any) => {
     setFormState((prevState) => ({ ...prevState, ...obj }));
   };
   const resetForm = () => {
-    updateForm({
-      isEditing: false,
-      catName: '',
-      catDescription: '',
-      catOwner: '',
-    });
+    updateForm(initialState);
   };
   const onSubmit = async () => {
     const currentCatState: Cat = {
